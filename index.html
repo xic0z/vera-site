@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academia Global | Inglês e Espanhol para Todas as Idades</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-base: #06090f;
+            --bg-card: #0d1420;
+            --bg-glass: rgba(13, 20, 32, 0.7);
+            --accent: #10b981;
+            --accent-glow: rgba(16, 185, 129, 0.35);
+            --accent-hover: #059669;
+            --blue-glow: rgba(59, 130, 246, 0.25);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: rgba(255, 255, 255, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, .brand-font {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        /* Top Bar de Urgência */
+        .top-ticker {
+            background: linear-gradient(90deg, #065f46, #047857, #065f46);
+            background-size: 200% 200%;
+            animation: gradientShift 6s ease infinite;
+            color: #fff;
+            text-align: center;
+            padding: 10px 15px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Header / Navbar */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent);
+            text-shadow: 0 0 15px var(--accent-glow);
+        }
+
+        .header-pill {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        /* Hero Section Extravagante */
+        .hero {
+            text-align: center;
+            padding: 60px 20px 40px;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 400px;
+            height: 250px;
+            background: radial-gradient(circle, var(--accent-glow) 0%, rgba(0,0,0,0) 70%);
+            z-index: -1;
+            filter: blur(50px);
+        }
+
+        .badge-tag {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.8rem, 7vw, 5.2rem);
+            line-height: 1.08;
+            margin-bottom: 25px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, #34d399, #10b981, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Botões Chocantes */
+        .btn-glow {
+            display: inline-block;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: #ffffff;
+            padding: 20px 50px;
+            font-size: 1.2rem;
+            font-weight: 800;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 35px var(--accent-glow);
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-glow:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 0 50px rgba(16, 185, 129, 0.6);
+            background: linear-gradient(135deg, #34d399, #10b981);
+        }
+
+        /* Temporizador Estilo Laser */
+        .urgency-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            max-width: 550px;
+            margin: 40px auto 60px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .urgency-title {
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            color: var(--accent);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .timer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+
+        .timer-unit {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 12px 5px;
+            text-align: center;
+        }
+
+        .timer-num {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #fff;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .timer-lbl {
+            font-size: 0.6rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 2px;
+        }
+
+        /* Secção Segmentada: Adultos vs Crianças */
+        .segments-section {
+            max-width: 1100px;
+            margin: 0 auto 80px;
+            padding: 0 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .segments-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+        }
+
+        .segment-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+        }
+
+        .segment-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent);
+        }
+
+        .segment-img-wrapper {
+            position: relative;
+            width: 100%;
+            height: 240px;
+            overflow: hidden;
+        }
+
+        .segment-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .segment-card:hover .segment-img {
+            transform: scale(1.05);
+        }
+
+        .segment-tag-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(6, 9, 15, 0.85);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            padding: 6px 14px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            border-radius: 30px;
+            text-transform: uppercase;
+        }
+
+        .segment-body {
+            padding: 30px;
+        }
+
+        .segment-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .segment-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .feature-ticks {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .feature-ticks li {
+            font-size: 0.9rem;
+            color: var(--text-main);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .feature-ticks li::before {
+            content: "✦";
+            color: var(--accent);
+            font-size: 0.9rem;
+        }
+
+        /* Checkout Card / Oferta Principal */
+        .pricing-section {
+            max-width: 600px;
+            margin: 0 auto 80px;
+            padding: 0 20px;
+        }
+
+        .master-card {
+            background: linear-gradient(145deg, #0d1420, #09101a);
+            border: 2px solid var(--accent);
+            border-radius: 24px;
+            padding: 45px 35px;
+            box-shadow: 0 20px 60px var(--accent-glow);
+            text-align: center;
+            position: relative;
+        }
+
+        .master-card::after {
+            content: "OFERTA LIMITADA";
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent);
+            color: #000;
+            font-weight: 800;
+            font-size: 0.75rem;
+            padding: 5px 15px;
+            border-radius: 20px;
+            letter-spacing: 1px;
+        }
+
+        .price-display {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
+            gap: 15px;
+        }
+
+        .current-price {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--accent);
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .old-price {
+            font-size: 1.4rem;
+            color: var(--text-muted);
+            text-decoration: line-through;
+        }
+
+        .payment-methods-grid {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .pay-badge {
+            background: #ffffff;
+            color: #0b0f19;
+            padding: 6px 12px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            border-radius: 6px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        /* Secção Professor / Autoridade */
+        .instructor-section {
+            max-width: 850px;
+            margin: 0 auto 80px;
+            padding: 40px 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+            text-align: left;
+        }
+
+        .instructor-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent);
+            box-shadow: 0 0 30px var(--accent-glow);
+            flex-shrink: 0;
+        }
+
+        .instructor-info {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .instructor-info h3 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .instructor-info p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* FAQ Estiloso */
+        .faq-section {
+            max-width: 750px;
+            margin: 0 auto 80px;
+            padding: 0 20px;
+        }
+
+        .faq-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            margin-bottom: 15px;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: border-color 0.3s ease;
+        }
+
+        .faq-box.active {
+            border-color: var(--accent);
+        }
+
+        .faq-q {
+            padding: 20px 25px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.05rem;
+        }
+
+        .faq-a {
+            padding: 0 25px 20px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            display: none;
+        }
+
+        .faq-box.active .faq-a {
+            display: block;
+        }
+
+        .faq-icon {
+            color: var(--accent);
+            font-weight: 800;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-box.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        footer {
+            text-align: center;
+            padding: 50px 20px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            .instructor-section { text-align: center; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Ticker Urgência -->
+    <div class="top-ticker">
+        ⚡ MATRÍCULAS ABERTAS: Inglês e Espanhol (Adultos e Crianças) com Acesso Vitalício!
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <span>◆</span> ACADEMIA GLOBAL
+        </div>
+        <div class="header-pill">Vagas Limitadas</div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="badge-tag">Método Revolucionário 2026</div>
+        <h1>Domina o <span>Inglês e o Espanhol</span> sem Sair de Casa</h1>
+        <p>Aprende de forma imersiva e natural. Programas exclusivos criados tanto para adultos que buscam fluência profissional quanto para crianças darem um salto no futuro.</p>
+        <a href="#checkout" class="btn-glow">Quero Garantir a Minha Vaga</a>
+    </section>
+
+    <!-- Temporizador de Urgência -->
+    <div class="urgency-box" style="text-align: center;">
+        <div class="urgency-title">⚡ O DESCONTO DE LANÇAMENTO EXPIRA EM:</div>
+        <div class="timer-grid">
+            <div class="timer-unit">
+                <div class="timer-num" id="days">03</div>
+                <div class="timer-lbl">Dias</div>
+            </div>
+            <div class="timer-unit">
+                <div class="timer-num" id="hours">14</div>
+                <div class="timer-lbl">Horas</div>
+            </div>
+            <div class="timer-unit">
+                <div class="timer-num" id="minutes">52</div>
+                <div class="timer-lbl">Minutos</div>
+            </div>
+            <div class="timer-unit">
+                <div class="timer-num" id="seconds">40</div>
+                <div class="timer-lbl">Segundos</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Secção de Segmentos: Adultos e Crianças -->
+    <section class="segments-section">
+        <div class="section-header">
+            <span style="color: var(--accent); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; font-size: 0.85rem;">Para Toda a Família</span>
+            <h2>Escolhe o teu programa de ensino</h2>
+        </div>
+
+        <div class="segments-grid">
+            <!-- Cartão Adultos -->
+            <div class="segment-card">
+                <div class="segment-img-wrapper">
+                    <!-- FOTO DE ADULTOS: Coloca a tua imagem em imagens/adults.jpg -->
+                    <img src="imagens/adults.jpg" alt="Inglês e Espanhol para Adultos" class="segment-img" onerror="this.src='https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=600&q=80'">
+                    <span class="segment-tag-badge">Adultos & Profissionais</span>
+                </div>
+                <div class="segment-body">
+                    <h3 class="segment-title">Fluência Corporativa & Diária</h3>
+                    <p class="segment-desc">Focado em conversação real, expressões nativas, entrevistas de emprego e viagens internacionais sem barreiras.</p>
+                    <ul class="feature-ticks">
+                        <li>Inglês & Espanhol do Zero ao Avançado</li>
+                        <li>Módulos de Negócios e Entrevistas</li>
+                        <li>Simulações de conversação prática</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Cartão Crianças -->
+            <div class="segment-card">
+                <div class="segment-img-wrapper">
+                    <!-- FOTO DE CRIANÇAS: Coloca a tua imagem em imagens/kids.jpg -->
+                    <img src="imagens/kids.jpg" alt="Inglês e Espanhol para Crianças" class="segment-img" onerror="this.src='https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=600&q=80'">
+                    <span class="segment-tag-badge" style="border-color: #3b82f6; color: #3b82f6;">Infantil & Júnior</span>
+                </div>
+                <div class="segment-body">
+                    <h3 class="segment-title">Aprendizagem Lúdica para Crianças</h3>
+                    <p class="segment-desc">Aulas interativas, jogos visuais e histórias envolventes para os mais pequenos absorverem os idiomas de forma natural e divertida.</p>
+                    <ul class="feature-ticks">
+                        <li>Método lúdico sem decorar regras chatas</li>
+                        <li>Vocabulário do dia a dia e animações</li>
+                        <li>Ideal para potenciar o desenvolvimento infantil</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Secção de Checkout Principal -->
+    <section class="pricing-section" id="checkout">
+        <div class="master-card">
+            <h3 style="font-size: 2rem; margin-bottom: 5px;">Acesso Total All-In-One</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px;">Inglês + Espanhol • Adultos + Crianças • Acesso Vitalício</p>
+            
+            <div class="price-display">
+                <div class="current-price">29,90 €</div>
+                <div class="old-price">69,90 €</div>
+            </div>
+
+            <ul class="feature-ticks" style="text-align: left; margin-bottom: 35px; display: inline-block;">
+                <li>Todos os níveis de Inglês e Espanhol incluídos</li>
+                <li>Conteúdos exclusivos para pais e filhos</li>
+                <li>Atualizações gratuitas vitalícias</li>
+                <li>Certificado internacional de conclusão</li>
+            </ul>
+
+            <!-- ================================================================= -->
+            <!-- COLA AQUI O TEU LINK DE PAGAMENTO DA STRIPE / IFTHENPAY / PAYPAL  -->
+            <!-- ================================================================= -->
+            <a href="LINK_PAGAMENTO" class="btn-glow" style="display: block; width: 100%;">Comprar Agora com Desconto</a>
+
+            <div class="payment-methods-grid">
+                <span class="pay-badge">MB WAY</span>
+                <span class="pay-badge">MULTIBANCO</span>
+                <span class="pay-badge">CARTÃO DE CRÉDITO</span>
+                <span class="pay-badge">PIX</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Secção Professor / Autoridade -->
+    <section class="instructor-section">
+        <!-- FOTO DO PROFESSOR: Coloca a tua imagem em imagens/professor.jpg -->
+        <img src="imagens/professor.jpg" alt="Professor" class="instructor-img" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80'">
+        <div class="instructor-info">
+            <h3>Criado por Especialistas em Linguística</h3>
+            <p>Desenvolvemos um sistema inovador que elimina a memorização mecânica. Combinamos neurociência da linguagem com conteúdos dinâmicos para que adultos e crianças alcancem resultados impressionantes desde a primeira semana.</p>
+        </div>
+    </section>
+
+    <!-- FAQ Extravagante -->
+    <section class="faq-section">
+        <div class="section-header">
+            <h2>Perguntas Frequentes</h2>
+        </div>
+
+        <div class="faq-box">
+            <div class="faq-q">Como funciona o acesso para toda a família? <span class="faq-icon">+</span></div>
+            <div class="faq-a">Com uma única compra, recebes acessos separados para os módulos de adultos e de crianças, cobrindo tanto o inglês quanto o espanhol do zero ao avançado.</div>
+        </div>
+
+        <div class="faq-box">
+            <div class="faq-q">O acesso ao curso é vitalício? <span class="faq-icon">+</span></div>
+            <div class="faq-a">Sim! Podes ver e rever todas as aulas e materiais quantas vezes quiseres, ao teu próprio ritmo e sem mensalidades.</div>
+        </div>
+
+        <div class="faq-box">
+            <div class="faq-q">Como recebo os dados após o pagamento? <span class="faq-icon">+</span></div>
+            <div class="faq-a">Assim que o pagamento for validado (instantâneo por MBWay ou Cartão), o acesso à plataforma é enviado automaticamente para o teu email.</div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Academia Global. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // FAQ Accordion Script
+        document.querySelectorAll('.faq-q').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentNode;
+                parent.classList.toggle('active');
+            });
+        });
+
+        // Temporizador Reativo
+        function startTimer() {
+            let totalSecs = (3 * 86400) + (14 * 3600) + (52 * 60) + 40;
+            setInterval(() => {
+                if(totalSecs <= 0) return;
+                totalSecs--;
+                const d = Math.floor(totalSecs / 86400);
+                const h = Math.floor((totalSecs % 86400) / 3600);
+                const m = Math.floor((totalSecs % 3600) / 60);
+                const s = Math.floor(totalSecs % 60);
+
+                document.getElementById('days').innerText = String(d).padStart(2, '0');
+                document.getElementById('hours').innerText = String(h).padStart(2, '0');
+                document.getElementById('minutes').innerText = String(m).padStart(2, '0');
+                document.getElementById('seconds').innerText = String(s).padStart(2, '0');
+            }, 1000);
+        }
+        startTimer();
+    </script>
+</body>
+</html>
