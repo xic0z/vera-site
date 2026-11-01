@@ -1,4 +1,4 @@
-# ✦ Academia de Inglês — The English Circle ✦
+# ✦ Academia de Inglês 
 
 Welcome to the official repository for The English Circle (Academia de Inglês) landing page. This project is a modern, responsive landing page designed to present the methodology, community values, weekly study plans, and instructor background for prospective students.
 
